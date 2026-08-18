@@ -1,0 +1,19 @@
+
+class Solution:
+    def oddEven(self, s : str) -> str:
+        f={}
+        for i in s:
+            f[i]=f.get(i,0)+1
+        x=0
+        y=0
+        for i,j in f.items():
+            pos=ord(i)-ord('a')+1
+            if pos%2==0 and j%2==0:
+                x+=1
+            if pos%2!=0 and j%2!=0:
+                y+=1
+        if (x+y)%2==0:
+            return 'EVEN'
+        return 'ODD'    
+    
+        
